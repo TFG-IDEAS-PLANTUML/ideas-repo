@@ -76,10 +76,17 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <!-- Repository for releases -->
-        <repository>
+
+        <!--<repository>
             <id>nexus-releases</id>
             <name>Nexus Release Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>-->
+
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://${env.GITHUB_TOKEN}:${env.GITHUB_TOKEN}@maven.pkg.github.com/TFG-IDEAS-PLANTUML/ideas-repo/</url>
         </repository>
     </distributionManagement>
     
@@ -137,7 +144,7 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>${nexus-staging-maven-plugin.version}</version>
@@ -155,11 +162,11 @@
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <skipStaging>true</skipStaging>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
     
-    <profiles>
+    <!--<profiles>
         <profile>
             <id>ideas-repo-developer</id>
             <activation>
@@ -266,5 +273,5 @@
                 </plugins>
             </build>
         </profile>
-    </profiles>
+    </profiles>-->
 </project>
